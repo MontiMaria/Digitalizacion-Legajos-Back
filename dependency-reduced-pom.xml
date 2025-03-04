@@ -3,7 +3,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany</groupId>
   <artifactId>Prueba</artifactId>
-  <packaging>war</packaging>
   <name>Prueba-1.0-SNAPSHOT</name>
   <version>1.0-SNAPSHOT</version>
   <build>
