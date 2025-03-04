@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: inline-block;
+  overflow: hidden; 
+}
+
+/* Estilos específicos para el enlace del logo */
+.logo-link {
+  text-decoration: none; 
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilo del logo*/
+.logo-link img {
+  display: block;
+  width: 80%;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+}
+
+/* Asegura que el enlace del logo no herede los estilos de hover */
+.topnav .logo-link:hover {
+  background-color: transparent; 
+  color: inherit; 
+}
+
+@media (max-width: 1024px) {
+  .logo-link img {
+      width: 100%; 
+      height: 100%;
+      align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-link img {
+      overflow-x: hidden;
+      width: 60%; 
+      align-items: center;
+      margin-left: 20%;
+  }
+}
+
+/* Estilos para la barra de navegación */
+.topnav {
+  overflow: hidden;
+  background-color: whitesmoke;
+  position: relative;
+  padding-top: 0.5%;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: #5C5C5C;
+  background: whitesmoke;
+  padding: 5px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+/* Stylea el menu hamburguesa */
+.topnav a.icon {
+  background: whitesmoke;
+  color: #5C5C5C;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 15px;
+  margin-top: 1.5%;
+  margin-right: 1%;
+}
+
+@media (max-width: 1024px) {
+  .topnav a.icon {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-top: 1.7%; 
+  }
+}
+
+@media (max-width: 768px) {
+  .topnav a.icon {
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    margin-top: 1.7%;
+  }
+}
+
+.topnav a.icon:hover {
+  background-color: whitesmoke;
+  color: #5C5C5C;
+}
+
+nav {
+  justify-content: center;
+  align-items: center;
+  padding: 24px 40px;
+}
+
+nav a {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.link {
+  text-decoration: none;
+  padding: 0.3rem 0.75rem;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fefefe;
+  position: relative;
+  transition: color 0.25s;
+  z-index: 1;
+  
+}
+
+.link:hover {
+  color: #fefefe;
+}
+
+.link::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #19cae1; 
+  transform: scaleY(0); 
+  transform-origin: top;
+  z-index: -1; 
+  transition: transform 0.45s ease; 
+  border-radius: 10px;
+}
+
+.link:hover::after {
+  transform: scaleY(1); 
+}
+
+header {
+  background-color: whitesmoke;
+  color: #fff;
+  padding: 2px 0;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+main {
+  padding: 20px;
+}
+
+.search, .alumno {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+a {
+  color: #00b1c7;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.search h2 {
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 5px;
+}
+
+form input, form select, form option {
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #00b1c7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #19cae1;
+}
+
+.results {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: whitesmoke;
+  color: #5C5C5C;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
