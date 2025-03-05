@@ -25,7 +25,7 @@ public class FileServlet extends HttpServlet {
         }
 
         // Construir la ruta completa del archivo
-        String uploadPath = getServletContext().getRealPath("/uploads") + File.separator + fileName;
+        String uploadPath = "/tmp/uploads" + File.separator + fileName;
         File file = new File(uploadPath);
 
         // Verificar si el archivo existe

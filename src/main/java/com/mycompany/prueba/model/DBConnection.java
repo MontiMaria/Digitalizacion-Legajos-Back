@@ -6,9 +6,11 @@ import java.sql.SQLException;
 
 public class DBConnection {
     // Usa la URL pública proporcionada por Railway
-    private static final String URL = "jdbc:mysql://shinkansen.proxy.rlwy.net:17050/railway"; // URL pública de la base de datos
-    private static final String USER = "root"; // Usuario de la base de datos
-    private static final String PASSWORD = "deljCHGLXyGGtEEaFiIerPubJFHnzBwB"; // Contraseña de la base de datos
+    // Usando las variables de entorno para conectar con la base de datos:
+    private static final String URL = "jdbc:mysql://" + System.getenv("MYSQL_HOST") + ":" + System.getenv("MYSQL_PORT") + "/" + System.getenv("MYSQL_DATABASE");
+    private static final String USER = System.getenv("MYSQL_USER");
+    private static final String PASSWORD = System.getenv("MYSQL_PASSWORD");
+
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
