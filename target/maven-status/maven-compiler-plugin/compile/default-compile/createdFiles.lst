@@ -1,0 +1,13 @@
+com\mycompany\prueba\JakartaRestConfiguration.class
+com\mycompany\prueba\PrincipalServlet.class
+com\mycompany\prueba\model\TestConnection.class
+com\mycompany\prueba\LoginServlet.class
+com\mycompany\prueba\TransferServlet.class
+com\mycompany\prueba\resources\JakartaEE8Resource.class
+com\mycompany\prueba\RenamepasswordServlet.class
+com\mycompany\prueba\model\Legajo.class
+com\mycompany\prueba\UpdatelegajoServlet.class
+com\mycompany\prueba\model\DBConnection.class
+com\mycompany\prueba\UploadServlet.class
+com\mycompany\prueba\AdduserServlet.class
+com\mycompany\prueba\ForgotpasswordServlet.class
