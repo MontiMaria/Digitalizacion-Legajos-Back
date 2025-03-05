@@ -65,7 +65,7 @@ public class UploadServlet extends HttpServlet {
 
                     if (fileName != null && !fileName.trim().isEmpty()) {
                         // Guardar el archivo en /tmp/uploads (directorio temporal en Railway)
-                        String uploadPath = "/tmp/uploads";  // Cambié la ruta a /tmp/uploads
+                        String uploadPath = getServletContext().getRealPath("/uploads");
                         File uploadDir = new File(uploadPath);
 
                         if (!uploadDir.exists()) {
