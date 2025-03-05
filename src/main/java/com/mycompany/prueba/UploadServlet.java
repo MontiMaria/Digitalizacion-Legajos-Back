@@ -65,7 +65,7 @@ public class UploadServlet extends HttpServlet {
 
                 if (fileName != null && !fileName.trim().isEmpty()) {
                     // 📌 Cambiamos la ruta de guardado a `/tmp/`
-                    String uploadPath = "/tmp/uploads";
+                    String uploadPath = "/uploads";
                     File uploadDir = new File(uploadPath);
 
                     if (!uploadDir.exists()) {
@@ -133,7 +133,7 @@ public class UploadServlet extends HttpServlet {
             conn = DriverManager.getConnection(url, usernameDb, passwordDb);
             
             // Guardar el enlace al archivo (asegúrate que este link sea accesible desde la web)
-            String fileLink = "/tmp/uploads/" + fileName;
+            String fileLink = "uploads/" + fileName;
             String query = "INSERT INTO legajos (idEscuela, nombre, nombreAlumno, link) VALUES (?, ?, ?, ?)";
             stmt = conn.prepareStatement(query);
             stmt.setInt(1, idEscuela);

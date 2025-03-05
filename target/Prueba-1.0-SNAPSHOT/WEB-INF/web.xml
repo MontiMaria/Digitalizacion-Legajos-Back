@@ -5,7 +5,7 @@
              http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
-    <!-- Configuración de tu UploadServlet -->
+    <!-- Configuración de tu LoginServlet -->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.LoginServlet</servlet-class>
@@ -15,6 +15,7 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     
+    <!-- Configuración de tu UploadServlet -->
     <servlet>
         <servlet-name>UploadServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.UploadServlet</servlet-class>
@@ -24,6 +25,7 @@
         <url-pattern>/upload</url-pattern>
     </servlet-mapping>
     
+    <!-- Configuración de tu ForgotpasswordServlet -->
     <servlet>
         <servlet-name>ForgotpasswordServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.ForgotpasswordServlet</servlet-class>
@@ -33,7 +35,8 @@
         <url-pattern>/forgotpassword</url-pattern>
     </servlet-mapping>
     
-     <servlet>
+    <!-- Configuración de tu RenamepasswordServlet -->
+    <servlet>
         <servlet-name>RenamepasswordServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.RenamepasswordServlet</servlet-class>
     </servlet>
@@ -42,6 +45,7 @@
         <url-pattern>/renamepassword</url-pattern>
     </servlet-mapping>
     
+    <!-- Configuración de tu AdduserServlet -->
     <servlet>
         <servlet-name>AdduserServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.AdduserServlet</servlet-class>
@@ -51,6 +55,7 @@
         <url-pattern>/adduser</url-pattern>
     </servlet-mapping> 
     
+    <!-- Configuración de tu PrincipalServlet -->
     <servlet>
         <servlet-name>PrincipalServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.PrincipalServlet</servlet-class>
@@ -60,6 +65,7 @@
         <url-pattern>/principal</url-pattern>
     </servlet-mapping> 
     
+    <!-- Configuración de tu UpdatelegajoServlet -->
     <servlet>
         <servlet-name>UpdatelegajoServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.UpdatelegajoServlet</servlet-class>
@@ -69,6 +75,7 @@
         <url-pattern>/updatelegajo</url-pattern>
     </servlet-mapping>
     
+    <!-- Configuración de tu TransferServlet -->
     <servlet>
         <servlet-name>TransferServlet</servlet-name>
         <servlet-class>com.mycompany.prueba.TransferServlet</servlet-class>
@@ -78,29 +85,39 @@
         <url-pattern>/transfer</url-pattern>
     </servlet-mapping>
 
+    <!-- Configuración para servir archivos estáticos (como imágenes, CSS, JS) -->
+    <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>readonly</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/assets/*</url-pattern>
+        <url-pattern>/styles/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- Configuración para servir los archivos desde /uploads/* -->
+    <servlet>
+        <servlet-name>FileServlet</servlet-name>
+        <servlet-class>com.mycompany.prueba.FileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileServlet</servlet-name>
+        <url-pattern>/uploads/*</url-pattern>
+    </servlet-mapping>
+
     <!-- Configuración para que index.jsp sea la página de bienvenida -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Configuración para servir archivos estáticos (como imágenes, CSS, JS) -->
-    <servlet>
-    <servlet-name>default</servlet-name>
-    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
-    <init-param>
-        <param-name>debug</param-name>
-        <param-value>1</param-value>
-    </init-param>
-    <init-param>
-        <param-name>readonly</param-name>
-        <param-value>true</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>/assets/*</url-pattern>
-    <url-pattern>/styles/*</url-pattern>
-    <url-pattern>/uploads/*</url-pattern>
-    </servlet-mapping>
 </web-app>
