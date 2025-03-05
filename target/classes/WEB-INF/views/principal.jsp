@@ -85,7 +85,7 @@
             %>
                 <br><div class="alumno">
                     <h3><%= alumno.getNombreAlumno() %></h3>
-                    <a href="<%= alumno.getLink() %>" target="_blank">Ver Legajo</a>
+                    <a href="/uploads/<%= alumno.getLink() %>" target="_blank">Ver Legajo</a>
                     <br><br><h4>Actualizar Legajo:</h4>
                     <form action="updatelegajo" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<%= alumno.getId() %>">
