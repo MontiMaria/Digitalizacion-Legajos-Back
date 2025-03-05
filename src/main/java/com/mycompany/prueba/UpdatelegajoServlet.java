@@ -47,7 +47,7 @@ public class UpdatelegajoServlet extends HttpServlet {
                     if(id != null) {
                         String fileOName = new File(item.getName()).getName();
                         fileName = System.currentTimeMillis() + "_" + fileOName;
-                        String uploadPath = "C:\\Program Files\\Apache Software Foundation\\Tomcat 9.0\\webapps\\uploads";
+                        String uploadPath = "/tmp/uploads";
                         File uploadDir = new File(uploadPath);
 
                         if(!uploadDir.exists()) {
@@ -83,7 +83,7 @@ public class UpdatelegajoServlet extends HttpServlet {
         String usernameDb = "root";
         String passwordDb = "deljCHGLXyGGtEEaFiIerPubJFHnzBwB";
 
-        String fileLink = "/uploads/" + fileName;
+        String fileLink = "/tmp/uploads/" + fileName;
 
         String query = "UPDATE legajos SET nombre = ?, link = ? WHERE id = ?";
 
