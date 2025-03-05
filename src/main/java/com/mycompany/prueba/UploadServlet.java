@@ -69,7 +69,7 @@ public class UploadServlet extends HttpServlet {
                     File uploadDir = new File(uploadPath);
 
                     if (!uploadDir.exists()) {
-                        boolean dirCreated = uploadDir.mkdir();
+                        boolean dirCreated = uploadDir.mkdirs();
                         if (dirCreated) {
                             System.out.println("Directorio /tmp/uploads creado.");
                         } else {
