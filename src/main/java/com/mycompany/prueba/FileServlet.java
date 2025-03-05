@@ -15,13 +15,13 @@ public class FileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Obtener el nombre del archivo desde la ruta (path info)
-        String fileName = request.getPathInfo(); // Ejemplo: "/1741179952296_CULPABLES-convertido.pdf"
+        // Extraer el nombre del archivo desde el path info
+        String fileName = request.getPathInfo(); // Ej: "/1741181823894_Scrum-Guide-ES.pdf"
         if (fileName == null || fileName.equals("/")) {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "No se proporcionó el archivo.");
             return;
         }
-        // Quitar la barra inicial
+        // Quitar la "/" inicial
         fileName = fileName.substring(1);
 
         // Construir la ruta completa del archivo usando la misma ubicación que en UploadServlet
@@ -39,6 +39,7 @@ public class FileServlet extends HttpServlet {
         response.setContentLength((int) file.length());
         response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
 
+        // Enviar el archivo al cliente
         try (FileInputStream inStream = new FileInputStream(file);
              OutputStream outStream = response.getOutputStream()) {
 
