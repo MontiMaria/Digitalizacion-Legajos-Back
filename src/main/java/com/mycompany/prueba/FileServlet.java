@@ -37,7 +37,7 @@ public class FileServlet extends HttpServlet {
         // Configurar la respuesta para la descarga
         response.setContentType(getServletContext().getMimeType(file.getName()));
         response.setContentLength((int) file.length());
-        response.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
+        response.setHeader("Content-Disposition", "inline; filename=\"" + fileName + "\"");
 
         // Enviar el archivo al cliente
         try (FileInputStream inStream = new FileInputStream(file);

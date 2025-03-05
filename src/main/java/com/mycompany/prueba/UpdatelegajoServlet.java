@@ -47,7 +47,9 @@ public class UpdatelegajoServlet extends HttpServlet {
                     if(id != null) {
                         String fileOName = new File(item.getName()).getName();
                         fileName = System.currentTimeMillis() + "_" + fileOName;
-                        String uploadPath = "/tmp/uploads";
+                        
+                        // Obtener la ruta dentro del contexto de la aplicación
+                        String uploadPath = getServletContext().getRealPath("/uploads");
                         File uploadDir = new File(uploadPath);
 
                         if(!uploadDir.exists()) {
@@ -83,7 +85,7 @@ public class UpdatelegajoServlet extends HttpServlet {
         String usernameDb = "root";
         String passwordDb = "deljCHGLXyGGtEEaFiIerPubJFHnzBwB";
 
-        String fileLink = "/tmp/uploads/" + fileName;
+        String fileLink = "/uploads/" + fileName; // Ajuste de la ruta
 
         String query = "UPDATE legajos SET nombre = ?, link = ? WHERE id = ?";
 
@@ -111,3 +113,4 @@ public class UpdatelegajoServlet extends HttpServlet {
         return "Short description";
     }
 }
+
