@@ -113,8 +113,7 @@ public class UploadServlet extends HttpServlet {
 
     // Guardar la ruta del archivo en la base de datos
     if (uploadedFile != null) {
-        String filePath = "/tmp/uploads/" + fileName; // 🔴 IMPORTANTE: Guardar la ruta de Railway
-        saveFileLinkToDatabase(idEscuela, nombre, filePath);
+        saveFileLinkToDatabase(idEscuela, nombre, fileName);
         request.setAttribute("successMessage", "Legajo subido con éxito.");
     } else {
         request.setAttribute("error", "No se ha enviado un archivo.");
