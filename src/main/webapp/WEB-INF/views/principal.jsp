@@ -89,7 +89,7 @@
                     <br><br><h4>Actualizar Legajo:</h4>
                     <form action="updatelegajo" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="id" value="<%= alumno.getId() %>">
-                        <input type="file" name="pdf" accept="application/pdf">
+                        <input type="file" name="pdf" accept="application/pdf" required>
                         <button type="submit">Subir</button>
                     </form>
                 </div><br>

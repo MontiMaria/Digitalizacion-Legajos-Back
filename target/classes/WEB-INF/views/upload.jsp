@@ -50,7 +50,7 @@
             <form action="/upload" method="post" enctype="multipart/form-data"> <!--action: a donde manda el legajo cuando apreto el boton, method: metodo utilizado para enviar los datos enctype: permite adjuntar img -->
                 <% if (isAdmin != null && isAdmin) { %>
                     <label for="legajo">Nombre y apellido:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre y apellido">
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre y apellido" required>
                     <label for="escuela">Escuela:</label>
                     <select name="escuela" id="escuela" required>
                         <option value="" disabled selected>Selecciona...</option>
@@ -60,13 +60,13 @@
                         <option value="4">Escuela N°7 "Gabriela Mistral"</option>
                     </select>
                     <label for="file-upload">Selecciona un archivo:</label>
-                    <input type="file" id="file-upload" name="file-upload" accept="application/pdf"><br>
+                    <input type="file" id="file-upload" name="file-upload" accept="application/pdf" required><br>
                     <button type="submit">Subir Archivo</button>
                 <% } else { %>
                     <label for="legajo">Nombre y apellido:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre y apellido">
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre y apellido" required>
                     <label for="file-upload">Selecciona un archivo:</label>
-                    <input type="file" id="file-upload" name="file-upload" accept="application/pdf"><br>
+                    <input type="file" id="file-upload" name="file-upload" accept="application/pdf" required><br>
                     <button type="submit">Subir Archivo</button>
                 <% } %>
             </form>
