@@ -58,7 +58,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 GBA. Todos los derechos reservados.</p>
+        <p>&copy; 2025 GBA. Todos los derechos reservados.</p>
     </footer>
 
     <script>
