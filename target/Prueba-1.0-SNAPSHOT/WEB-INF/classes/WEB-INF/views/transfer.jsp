@@ -52,7 +52,7 @@
         <main>
             <br><br>
             <section class="search">
-                <h2>Buscar Legajo</h2>
+                <h2>Transferir Alumno</h2>
                 <form action="/principal" method="post">
                     <input type="hidden" name="view" value="transfer">
                     <label for="search-input">Nombre y apellido:</label>
